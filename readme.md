@@ -87,3 +87,9 @@ recognize_image_text_and_position(image_path, model_id, "./output/output.jpg")
 output_path = "./output"
 recognize_image_text_and_parse_html(image_path, output_path, model_id)
 ```
+
+## 相关内容
+- https://qwenlm.github.io/zh/blog/qwen2.5-vl/
+- https://bailian.console.aliyun.com/#/model-market/detail/qwen2.5-vl-72b-instruct
+- https://github.com/QwenLM/Qwen2.5-VL/blob/main/cookbooks/document_parsing.ipynb
+- https://github.com/QwenLM/Qwen2.5-VL/blob/main/cookbooks/ocr.ipynb

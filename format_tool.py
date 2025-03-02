@@ -6,9 +6,10 @@ from PIL import Image, ImageDraw, ImageFont
 import requests
 from io import BytesIO
 from bs4 import BeautifulSoup, Tag
-from pathlib import Path
 import re
 import math
+
+FONT_PATH = os.environ.get("FONT_PATH", "./static/font/STSONG.ttf")
 
 # Function to draw bounding boxes and text on images based on HTML content
 
@@ -38,7 +39,7 @@ def draw_bbox(image_path, resized_width, resized_height, full_predict):
         else:
             filtered_elements.append(el)  # Include all other elements
 
-    font = ImageFont.truetype("./static/font/STSONG.ttf", 20)
+    font = ImageFont.truetype(FONT_PATH, 20)
     draw = ImageDraw.Draw(image)
 
     # Draw bounding boxes and text for each element

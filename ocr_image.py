@@ -89,8 +89,8 @@ if __name__ == "__main__":
     image_path = './static/images/scan_copy_contract.png'
     model_id = 'qwen2.5-vl-72b-instruct'
 
-    # recognize_image_text_and_position(
-    #     image_path, model_id, "./output/output.jpg")
+    recognize_image_text_and_position(
+        image_path, model_id, "./output/output.jpg")
 
-    output_path = "./output"
-    recognize_image_text_and_parse_html(image_path, output_path)
+    # output_path = "./output"
+    # recognize_image_text_and_parse_html(image_path, output_path)
