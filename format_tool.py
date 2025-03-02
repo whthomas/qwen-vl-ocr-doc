@@ -16,11 +16,13 @@ import math
 def draw_bbox(image_path, resized_width, resized_height, full_predict):
     if image_path.startswith("http"):
         response = requests.get(image_path)
-        image = Image.open(BytesIO(response.content))
+        image = Image.open(BytesIO(response.content)).convert("RGB")
+        original_width = image.width
+        original_height = image.height
     else:
-        image = Image.open(image_path)
-    original_width = image.width
-    original_height = image.height
+        image = Image.open(image_path).convert("RGB")
+        original_width = image.width
+        original_height = image.height
 
     # Parse the provided HTML content
     soup = BeautifulSoup(full_predict, 'html.parser')
@@ -67,9 +69,7 @@ def draw_bbox(image_path, resized_width, resized_height, full_predict):
         draw.text((x1_resized, y2_resized), text, fill='black', font=font)
 
     # Save the image
-    image.save("output.jpg")
-    # Display the image using system command
-    os.system("open output.jpg")
+    return image
 
 # Function to clean and format HTML content
 
