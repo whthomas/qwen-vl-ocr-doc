@@ -11,7 +11,7 @@ load_dotenv(dotenv_path=".env.local")
 
 client = OpenAI(
     # If the environment variable is not configured, please replace the following line with the Dashscope API Key: api_key="sk-xxx".
-    api_key=os.getenv('DASHSCOPE_API_KEY'),
+    api_key=os.getenv('BAILIAN_API_KEY'),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 
